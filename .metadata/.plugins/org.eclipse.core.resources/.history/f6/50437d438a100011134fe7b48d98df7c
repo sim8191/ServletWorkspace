@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+table {
+	border-collapse: collapse;
+	border: 1px solid #000;
+	margin: 5px;
+}
+th, td {
+	border: 1px solid #000;
+}
+table img {
+	width: 150px;
+}
+</style>
+</head>
+<body>
+	<h1>JSON</h1>
+	<div>
+		<button type="button" id="btn">실행</button>
+	</div>
+	<div>
+		<input type="search" id="searchId" placeholder="id검색"/>
+		<button type="button" id="btn-search-id">검색</button>
+	</div>
+	<div>
+		<table>
+			<tr>
+				<th>아이디</th>
+				<td><input type="text" name="id"/></td>
+			</tr>
+			<tr>
+				<th>이름</th>
+				<td><input type="text" name="name"/></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align:center;">
+					<button id="btn-save-member">회원가입</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="wrapper"></div>
+	
+	<script>
+		$(function() {
+			$("#btn").click(function() {
+				$.ajax({
+					url : "/ajax/json",
+					success : function(data) {
+						console.log(data);
+						// ajax의 success내부에서 응답데이터의 형식이
+						// json인 경우 JSON.parse()메서드를 호출하여
+						// 객체로 변환처리까지 완료해준다.
+						
+						// JSON 데이터를 JS객체로 변환
+						// JSON.stringify(js객체) : JSON
+						
+						
+					}
+				})
+			});
+		})
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

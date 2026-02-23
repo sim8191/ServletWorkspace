@@ -1,0 +1,73 @@
+package com.kh.ajax.jq;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+/**
+ * Servlet implementation class AjaxJSonServlet
+ */
+@WebServlet("/json")
+public class AjaxJSonServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public AjaxJSonServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// json : 자바스크립트 형식의 겍체
+		/*
+		 * JSON(JavaScript Object Notation)
+		 *  - AJAX비동기 통신시 가장 많이 사용되는 데이터 포맷
+		 *  - 순수 문자열로 이루어져 있어 가독성이 좋고, 가볍기 때문에 플랫폼간
+		 *  데이터 교환시 자주 사용된다.
+		 * 
+		 *  - JSON은 자바에서 제공하지 않는 객체 표기법이기 때문에 라이브러리
+		 *  설치가 필요.
+		 *  1. json-simple.jar
+		 *   - JSONArray
+		 *   - JSONObject
+		 * 
+		 * 
+		 * */
+		// "['홍길동','민경민']"
+		JSONArray arr = new JSONArray(); //"[]"
+		JSONObject obj = new JSONObject(); //"{}"
+		
+		arr.add("홍길동"); //"['홍길동']"
+		arr.add("민경민"); //"['홍길동','민경민']"
+		
+		String sample = "['홍길동','민경민']";
+		
+		obj.put("name", "홍길동"); // "{ name : '홍길동'}"
+		obj.put("age", 25); // "{ name:'홍길동', age:25}"
+		
+		response.setContentType("application/json; charset=utf-8"); //json타입의 형태 
+		response.getWriter().print(0);
+		
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

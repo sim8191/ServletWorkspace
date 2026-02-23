@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+	table {
+		border-collapse: collapse;
+		border: 1px solid #000;
+		margin: 5px;
+	}
+
+	th,
+	td {
+		border: 1px solid #000;
+	}
+
+	table img {
+		width: 150px;
+	}
+</style>
+</head>
+<body>
+    <h1>응답데이터 형식 : text</h1>
+    <input type="button" value="실행" id="btn1">
+    <div class="wrapper"></div>
+    <hr>
+    <script>
+        $(function(){
+            $("#btn1").click(function(){
+                $.ajax({
+                    url : "/ajax/text", // 요청을 보낼 서버 주소(필수)
+                    data : { // 서버에 전송할 데이터
+                        name : "kiwi",
+                        num : 35,
+                        flag : false
+                    }, // name=kiwi&num=35&flag=false
+                    method : "GET", // 전송방식설정(기본값 Get)
+                    dataType : "text", //응답데이터의 형식(text, html, json)
+                    success : function(response){ // 요청 성공 시 실행할 함수
+                        console.log(response);
+                        // res.text()처리 완료된 데이터가 넘어온다.
+                        $(".wrapper").html(response)
+                    },
+                    error : function(xhr,status, error){
+                        console.log(xhr, status, error);
+                    },
+                    complete : function(){ // 요청 성공이든 실패든 항상 실행
+                        console.log("서버 요청 완료");
+                    }
+                    /*
+                        그 외 주요속성
+                         - async : 서버와의 통신시 비동기 처리방식 여부(기본값 true)
+                         - crossDomain : 타 도메인 호출가능 여부 설정(기본값 false)
+                         - contentType : request로 보내는 데이터의 인코딩 방식(기본값 text)
+                         - processData : 서버로 보내는 값이 File인 경우 설정
+                    */
+                });
+            });
+        })
+    </script>
+
+    <h2>응답데이터 CSV</h2>
+    <input type="button" value="실행" id="btn2">
+    <div class="container"></div>
+    <script>
+        $("#btn2").click(function(){
+            $.ajax({
+                url : '/ajax/csv',
+                success : function(data){
+                    console.log(data);
+
+                    const $table = $("<table><table>");
+                    const persons = data.split("\r\n");
+                    persons.pop();
+                    console.log(persons);
+
+                },
+                error : function(xhr, status, err){
+                    console.log(xhr, status, err);
+                }
+            })
+        })
+
+    </script>
+</body>
+</html>

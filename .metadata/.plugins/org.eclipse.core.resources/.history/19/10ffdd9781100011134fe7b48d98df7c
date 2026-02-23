@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ajax</title>
+</head>
+<body>
+	<h1>Hello Ajax</h1>
+	<h2>js</h2>
+	<a href="/ajax/js/ajax.jsp">js-ajax</a>
+	
+	<h2>Text</h2>
+	<a href="/ajax/text/text.html">text</a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

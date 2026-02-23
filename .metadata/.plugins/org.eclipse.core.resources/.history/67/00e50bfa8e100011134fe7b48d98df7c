@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test1</title>
+</head>
+<body>
+<h1>연습문제1</h1>
+<a href=""></a>
+<a href="/ajax/board/board.jsp">board</a>
+</body>
+</html>

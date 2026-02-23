@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v9.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v9.0 Server at localhost" name="Tomcat v9.0 Server at localhost" runtime-id="Apache Tomcat v9.0" serveModulesWithoutPublish="true" server-type="org.eclipse.jst.server.tomcat.90" server-type-id="org.eclipse.jst.server.tomcat.90" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="16">
+    <list key="modules" value0="01_helloweb::org.eclipse.jst.jee.server:01_helloweb::jst.web::4.0" value1="02_hellojsp::org.eclipse.jst.jee.server:02_hellojsp::jst.web::4.0" value2="03_ajax::org.eclipse.jst.jee.server:03_ajax::jst.web::4.0" value3="99_test::org.eclipse.jst.jee.server:99_test::jst.web::4.0" value4="03_test_1::org.eclipse.jst.jee.server:03_test_1::jst.web::4.0"/>
+  </server>
+</servers>

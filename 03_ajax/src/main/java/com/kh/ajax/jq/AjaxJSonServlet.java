@@ -1,0 +1,105 @@
+package com.kh.ajax.jq;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+import com.ck.ection.model.vo.Person;
+import com.google.gson.Gson;
+
+/**
+ * Servlet implementation class AjaxJSonServlet
+ */
+@WebServlet("/json")
+public class AjaxJSonServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public AjaxJSonServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// json : 자바스크립트 형식의 겍체
+		/*
+		 * JSON(JavaScript Object Notation)
+		 *  - AJAX비동기 통신시 가장 많이 사용되는 데이터 포맷
+		 *  - 순수 문자열로 이루어져 있어 가독성이 좋고, 가볍기 때문에 플랫폼간
+		 *  데이터 교환시 자주 사용된다.
+		 * 
+		 *  - JSON은 자바에서 제공하지 않는 객체 표기법이기 때문에 라이브러리
+		 *  설치가 필요.
+		 *  1. json-simple.jar
+		 *   - JSONArray
+		 *   - JSONObject
+		 * 
+		 * 
+		 * */
+		// "['홍길동','민경민']"
+		JSONArray arr = new JSONArray(); //"[]"
+		JSONObject obj = new JSONObject(); //"{}"
+		
+		arr.add("홍길동"); //"['홍길동']"
+		arr.add("민경민"); //"['홍길동','민경민']"
+		
+		String sample = "['홍길동','민경민']";
+		
+		obj.put("name", "홍길동"); // "{ name : '홍길동'}"
+		obj.put("age", 25); // "{ name:'홍길동', age:25}"
+		
+		response.setContentType("application/json; charset=utf-8"); //json타입의 형태 
+//		response.getWriter().print(obj);
+		
+		/*
+		 * Gson(Google Json)
+		 *  - JSON파일을 쉽게 읽고, 생성할 수 있는 기능을 제공하는 라이브러리
+		 *  - toJson(자바객체, 출력스트림) : Java객체를 json으로 변경
+		 *  - fromJson(JSON데이터, 변경할 클래스) : JSON형태의 객체를 java객체로
+		 *  변경하는 메서드
+		 * 
+		 * */
+		List<Person> list = new ArrayList<>();
+		list.add(new Person("황제성", 5, "남자"));
+		list.add(new Person("쥴리아 로버츠", 15, "여자"));
+		list.add(new Person("김고은", 25, "여자"));
+		list.add(new Person("다프트펑크", 33, "남자"));
+		
+		String searchId = request.getParameter("searchId");
+		
+		Person p = null;
+		for(Person person : list) {
+			if(person.getName().equals(searchId)) {
+				p = person;
+				break;
+			}
+		}
+		
+		Gson gson = new Gson();
+		gson.toJson(p, response.getWriter()); // 뻑남
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

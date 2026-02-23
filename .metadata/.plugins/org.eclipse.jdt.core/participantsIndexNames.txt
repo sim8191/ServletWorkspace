@@ -1,0 +1,27 @@
+INDEX VERSION 1.131
+C:\ServletWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1908191920.index
+\03_test_1\src\main\java
+C:\ServletWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3052475018.index
+\02_helloJsp2\src\main\java
+C:\ServletWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1861394774.index
+\01_helloweb\src\main\java
+C:\ServletWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\333591232.index
+\02_hellojsp\src\main\java
+C:\ServletWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1793456576.index
+\02_hellojsp\src\main\java
+C:\ServletWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4256481179.index
+\01_helloweb\src\main\java
+C:\ServletWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3319137336.index
+\03_ajax\src\main\java
+C:\ServletWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3671546570.index
+\02_helloJsp2\src\main\java
+C:\ServletWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2616769430.index
+\02_helloJsp2\src\main\java
+C:\ServletWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3749115792.index
+\02_hellojsp\src\main\java
+C:\ServletWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2563109628.index
+\03_ajax\src\main\java
+C:\ServletWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2813200263.index
+\02_hellojsp\src\main\java
+C:\ServletWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2003854103.index
+\02_hellojsp\src\main\java
